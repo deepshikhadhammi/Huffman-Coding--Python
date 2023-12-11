@@ -1,0 +1,48 @@
+Making huffman tree!
+Original list of individual Huffman trees (str):
+HuffmanTree('l',15,None,None,None)
+HuffmanTree('o',10,None,None,None)
+HuffmanTree('w',5,None,None,None)
+HuffmanTree('r',5,None,None,None)
+HuffmanTree('h',5,None,None,None)
+HuffmanTree('e',5,None,None,None)
+HuffmanTree('d',5,None,None,None)
+
+Merging trees to make a complete Huffman Tree:
+Merging tree HuffmanTree('d',5,None,None,None) and HuffmanTree('e',5,None,None,None) to make HuffmanTree('de',10,HuffmanTree('d',5,None,None,False),HuffmanTree('e',5,None,None,True),None)
+Merging tree HuffmanTree('h',5,None,None,None) and HuffmanTree('r',5,None,None,None) to make HuffmanTree('hr',10,HuffmanTree('h',5,None,None,False),HuffmanTree('r',5,None,None,True),None)
+Merging tree HuffmanTree('w',5,None,None,None) and HuffmanTree('de',10,HuffmanTree('d',5,None,None,False),HuffmanTree('e',5,None,None,True),None) to make HuffmanTree('wde',15,HuffmanTree('w',5,None,None,False),HuffmanTree('de',10,HuffmanTree('d',5,None,None,False),HuffmanTree('e',5,None,None,True),True),None)
+Merging tree HuffmanTree('hr',10,HuffmanTree('h',5,None,None,False),HuffmanTree('r',5,None,None,True),None) and HuffmanTree('o',10,None,None,None) to make HuffmanTree('hro',20,HuffmanTree('hr',10,HuffmanTree('h',5,None,None,False),HuffmanTree('r',5,None,None,True),False),HuffmanTree('o',10,None,None,True),None)
+Merging tree HuffmanTree('l',15,None,None,None) and HuffmanTree('wde',15,HuffmanTree('w',5,None,None,False),HuffmanTree('de',10,HuffmanTree('d',5,None,None,False),HuffmanTree('e',5,None,None,True),True),None) to make HuffmanTree('lwde',30,HuffmanTree('l',15,None,None,False),HuffmanTree('wde',15,HuffmanTree('w',5,None,None,False),HuffmanTree('de',10,HuffmanTree('d',5,None,None,False),HuffmanTree('e',5,None,None,True),True),True),None)
+Merging tree HuffmanTree('hro',20,HuffmanTree('hr',10,HuffmanTree('h',5,None,None,False),HuffmanTree('r',5,None,None,True),False),HuffmanTree('o',10,None,None,True),None) and HuffmanTree('lwde',30,HuffmanTree('l',15,None,None,False),HuffmanTree('wde',15,HuffmanTree('w',5,None,None,False),HuffmanTree('de',10,HuffmanTree('d',5,None,None,False),HuffmanTree('e',5,None,None,True),True),True),None) to make HuffmanTree('hrolwde',50,HuffmanTree('hro',20,HuffmanTree('hr',10,HuffmanTree('h',5,None,None,False),HuffmanTree('r',5,None,None,True),False),HuffmanTree('o',10,None,None,True),False),HuffmanTree('lwde',30,HuffmanTree('l',15,None,None,False),HuffmanTree('wde',15,HuffmanTree('w',5,None,None,False),HuffmanTree('de',10,HuffmanTree('d',5,None,None,False),HuffmanTree('e',5,None,None,True),True),True),True),None)
+Merging done!
+Final tree
+HuffmanTree('hrolwde',50,HuffmanTree('hro',20,HuffmanTree('hr',10,HuffmanTree('h',5,None,None,False),HuffmanTree('r',5,None,None,True),False),HuffmanTree('o',10,None,None,True),False),HuffmanTree('lwde',30,HuffmanTree('l',15,None,None,False),HuffmanTree('wde',15,HuffmanTree('w',5,None,None,False),HuffmanTree('de',10,HuffmanTree('d',5,None,None,False),HuffmanTree('e',5,None,None,True),True),True),True),None)
+
+Created huffman tree:
+                     -1-> ('e',5)
+                -1->
+                     -0-> ('d',5)
+           -1->
+                -0-> ('w',5)
+      -1->
+           -0-> ('l',15)
+ -->
+           -1-> ('o',10)
+      -0->
+                -1-> ('r',5)
+           -0->
+                -0-> ('h',5)
+
+Original text was 50 characters in length which, with 1 byte per character, would be 50 ASCII bytes!
+The encoding table is:
+'d':1110
+'e':1111
+'h':000
+'l':10
+'o':01
+'r':001
+'w':110
+New text is 135 bits in length, which is 17 bytes! (Plus we'd also have to store the decoding table as well.)
+That is 34.00% of the size
+Program completed successfully!
